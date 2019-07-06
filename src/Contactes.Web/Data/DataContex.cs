@@ -16,6 +16,10 @@ namespace Contactes.Web.Models
         {
         }
 
+        public DbSet<Persona>  Personas { get; set; }
+
+        public DbSet<Tipo> Tipos { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

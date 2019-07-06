@@ -1,13 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Contactes.Web.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace Contactes.Web.Models
+namespace Contactes.Web.ViewModels
 {
-    public class Persona
+    public class PersonaViewModel
     {
-        [Key]
-        public int Identificador { get; set; }
-
+       
         [Required]
         [StringLength(50, ErrorMessage = "Debe contener maximo {0} caracteres")]
         public string Nombre { get; set; }
@@ -25,13 +25,10 @@ namespace Contactes.Web.Models
 
         [StringLength(250, ErrorMessage = "Debe contener maximo {0} caracteres")]
         public string Direccion { get; set; }
-                          
-        [Required]
+               
         public int TipoIdentificador { get; set; }
 
-        [ForeignKey("TipoIdentificador")]
-        public Tipo TipoContacte { get; set; }
-
-
+        public IEnumerable<SelectListItem> TiposDeContactos { get; set; }
+       // public List<Tipo> TiposDeContactos { get; set; }
     }
 }
