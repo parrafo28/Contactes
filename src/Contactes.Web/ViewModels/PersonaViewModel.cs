@@ -1,5 +1,6 @@
 ﻿using Contactes.Web.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -28,7 +29,9 @@ namespace Contactes.Web.ViewModels
                
         public int TipoIdentificador { get; set; }
 
-        public IEnumerable<SelectListItem> TiposDeContactos { get; set; }
-       // public List<Tipo> TiposDeContactos { get; set; }
+        public List<SelectListItem> TiposDeContactos { get; set; }
+
+        
+        // public List<Tipo> TiposDeContactos { get; set; }
     }
 }

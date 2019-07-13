@@ -20,11 +20,18 @@ namespace Contactes.Web.Controllers
 
         public IActionResult Create()
         {
-            var tipos = _context.Tipos.ToList();
+            var tipos = _context.Tipos;
+
+            List<SelectListItem> items = new List<SelectListItem>();
+
+            foreach (var item in tipos)
+            {
+                items.Add(new SelectListItem { Text = "Nombre", Value = "Identificador" });
+            }
 
             var vm = new PersonaViewModel
             {
-                TiposDeContactos = new SelectList(tipos, "Identificador", "Nombre")
+                TiposDeContactos =  new SelectList(tipos, "Identificador", "Nombre").ToList()
             };
 
             return View(vm);
