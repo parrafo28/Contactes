@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="~/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
- 
+
     <link rel="stylesheet" href="~/css/jquery.fancybox.min.css">
 
     <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
@@ -41,7 +41,7 @@
 
     <link rel="stylesheet" href="~/css/style.css">
 </head>
- 
+
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
@@ -66,7 +66,7 @@
                         <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> info@mydomain.com</a>
                     </div>
                     <div class="col-lg-3 text-right">
-                        <a href="login.html" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
+                        <a class="small mr-3"><span class="icon-unlock-alt" asp-area="Identity" asp-page="Account/Login"></span> Log In</a>
                         <a href="register.html" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Register</a>
                     </div>
                 </div>
@@ -102,6 +102,9 @@
                                 </li>
                                 <li>
                                     <a href="contact.html" class="nav-link text-left">Contact</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-left" asp-controller="Contactos" asp-action="Create">Nuevo Contacto</a>
                                 </li>
                             </ul>                                                                                                                                                                                                                                                                                          </ul>
                         </nav>
@@ -354,7 +357,7 @@
 
             </div>
         </div>
-                     
+
         <div class="section-bg style-1" style="background-image: url('images/about_1.jpg');">
             <div class="container">
                 <div class="row">
@@ -659,33 +662,33 @@
 
 
     </div>
-            <!-- .site-wrap -->
-            <!-- loader -->
-            <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#51be78" /></svg></div>
+    <!-- .site-wrap -->
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#51be78" /></svg></div>
 
-            <script src="~/js/jquery-3.3.1.min.js"></script>
-            <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
-            <script src="~/js/jquery-ui.js"></script>
-            <script src="~/js/popper.min.js"></script>
-            <script src="~/js/bootstrap.min.js"></script>
-            <script src="~/js/owl.carousel.min.js"></script>
-            <script src="~/js/jquery.stellar.min.js"></script>
-            <script src="~/js/jquery.countdown.min.js"></script>
-            <script src="~/js/bootstrap-datepicker.min.js"></script>
-            <script src="~/js/jquery.easing.1.3.js"></script>
-            <script src="~/js/aos.js"></script>
-            <script src="~/js/jquery.fancybox.min.js"></script>
-            <script src="~/js/jquery.sticky.js"></script>
-            <script src="~/js/jquery.mb.YTPlayer.min.js"></script>
-
-
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.stellar.min.js"></script>
+    <script src="~/js/jquery.countdown.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/js/jquery.easing.1.3.js"></script>
+    <script src="~/js/aos.js"></script>
+    <script src="~/js/jquery.fancybox.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+    <script src="~/js/jquery.mb.YTPlayer.min.js"></script>
 
 
-            <script src="~/js/main.js"></script>
 
-            @RenderSection("Scripts", required: false)
+
+    <script src="~/js/main.js"></script>
+
+    @RenderSection("Scripts", required: false)
 </body>
 
 
- 
+
 </html>

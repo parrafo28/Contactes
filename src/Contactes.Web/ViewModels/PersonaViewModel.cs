@@ -1,4 +1,5 @@
-﻿using Contactes.Web.Models;
+﻿using Contactes.Web.Helpers;
+using Contactes.Web.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,11 @@ namespace Contactes.Web.ViewModels
 
         [StringLength(250, ErrorMessage = "Debe contener maximo {0} caracteres")]
         public string Direccion { get; set; }
-               
+
+        [NumeroValido]
+        public decimal MontoAdeudado { get; set; }
+
+
         public int TipoIdentificador { get; set; }
 
         public List<SelectListItem> TiposDeContactos { get; set; }

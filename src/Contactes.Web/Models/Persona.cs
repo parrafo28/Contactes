@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Contactes.Web.Helpers;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Contactes.Web.Models
@@ -22,6 +23,9 @@ namespace Contactes.Web.Models
 
         [StringLength(13, ErrorMessage = "Debe contener maximo {0} caracteres")]
         public string Telefono { get; set; }
+
+        [NumeroValido]
+        public decimal? MontoAdeudado { get; set; }
 
         [StringLength(250, ErrorMessage = "Debe contener maximo {0} caracteres")]
         public string Direccion { get; set; }
