@@ -1,7 +1,6 @@
 ﻿using Contactes.Web.Helpers;
 using Contactes.Web.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -9,7 +8,7 @@ namespace Contactes.Web.ViewModels
 {
     public class PersonaViewModel
     {
-       
+
         [Required]
         [StringLength(50, ErrorMessage = "Debe contener maximo {0} caracteres")]
         public string Nombre { get; set; }
@@ -34,9 +33,9 @@ namespace Contactes.Web.ViewModels
 
         public int TipoIdentificador { get; set; }
 
-        public List<SelectListItem> TiposDeContactos { get; set; }
+        public IEnumerable<SelectListItem> TiposDeContactos { get; set; }
 
-        
-        // public List<Tipo> TiposDeContactos { get; set; }
+
+         public IEnumerable<Tipo> TiposDeContactosx { get; set; }
     }
 }

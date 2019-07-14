@@ -20,18 +20,12 @@ namespace Contactes.Web.Controllers
 
         public IActionResult Create()
         {
-            var tipos = _context.Tipos;
-
-            List<SelectListItem> items = new List<SelectListItem>();
-
-            foreach (var item in tipos)
-            {
-                items.Add(new SelectListItem { Text = "Nombre", Value = "Identificador" });
-            }
+            var tipos = _context.Tipos; 
 
             var vm = new PersonaViewModel
             {
-                TiposDeContactos =  new SelectList(tipos, "Identificador", "Nombre").ToList()
+                TiposDeContactos =  new SelectList(tipos, "Identificador", "Nombre"),
+                TiposDeContactosx =  tipos 
             };
 
             return View(vm);
@@ -41,8 +35,8 @@ namespace Contactes.Web.Controllers
         public IActionResult Create(PersonaViewModel vm)
         {
             if (!ModelState.IsValid)
-            {
-                return View();
+            {vm.
+                return View(vm);
             }
 
             var persona = new Persona
