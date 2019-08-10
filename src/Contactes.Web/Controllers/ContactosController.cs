@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Contactes.Web.Models;
+﻿using Contactes.Web.Models;
 using Contactes.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
 
 namespace Contactes.Web.Controllers
 {
@@ -16,16 +13,16 @@ namespace Contactes.Web.Controllers
         public ContactosController(DataContex context)
         {
             _context = context;
-        }
+        } 
 
         public IActionResult Create()
         {
-            var tipos = _context.Tipos; 
+            var tipos = _context.Tipos;
 
             var vm = new PersonaViewModel
             {
-                TiposDeContactos =  new SelectList(tipos, "Identificador", "Nombre"),
-                TiposDeContactosx =  tipos 
+                TiposDeContactos = new SelectList(tipos, "Identificador", "Nombre"),
+                TiposDeContactosx = tipos
             };
 
             return View(vm);
@@ -35,7 +32,7 @@ namespace Contactes.Web.Controllers
         public IActionResult Create(PersonaViewModel vm)
         {
             if (!ModelState.IsValid)
-            {vm.
+            {
                 return View(vm);
             }
 
@@ -56,5 +53,8 @@ namespace Contactes.Web.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+
+
     }
 }
