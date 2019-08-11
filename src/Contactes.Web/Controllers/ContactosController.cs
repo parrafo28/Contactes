@@ -1,8 +1,10 @@
 ﻿using Contactes.Web.Models;
 using Contactes.Web.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Contactes.Web.Controllers
 {
@@ -13,8 +15,16 @@ namespace Contactes.Web.Controllers
         public ContactosController(DataContex context)
         {
             _context = context;
-        } 
+        }
 
+        [Authorize]
+        public IActionResult Listado()
+        {
+            var contactos = _context.Personas.ToList();
+            return View(contactos);
+        }
+
+        [Authorize]
         public IActionResult Create()
         {
             var tipos = _context.Tipos;
@@ -28,6 +38,7 @@ namespace Contactes.Web.Controllers
             return View(vm);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Create(PersonaViewModel vm)
         {
@@ -52,6 +63,17 @@ namespace Contactes.Web.Controllers
 
 
             return RedirectToAction("Index", "Home");
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> EliminarContacto(int identificador)
+        {
+            var contacto = await _context.Personas.FindAsync(identificador);
+
+            contacto.Eliminado = true;
+            await _context.SaveChangesAsync();
+            return Ok();
         }
 
 

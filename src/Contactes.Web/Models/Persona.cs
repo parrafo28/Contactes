@@ -6,7 +6,7 @@ namespace Contactes.Web.Models
 {
     public class Persona
     {
-        [Key]
+        // [Key]
         public int Identificador { get; set; }
 
         [Required]
@@ -29,13 +29,19 @@ namespace Contactes.Web.Models
 
         [StringLength(250, ErrorMessage = "Debe contener maximo {0} caracteres")]
         public string Direccion { get; set; }
-                          
+
         [Required]
         public int TipoIdentificador { get; set; }
 
         [ForeignKey("TipoIdentificador")]
         public Tipo TipoContacte { get; set; }
 
+        public bool Eliminado { get; set; }
 
+        [Display(Name = "Nombre Completo")]
+        public string NombreCompleto => $"{Nombre} {Apellido}";
+
+        public string Estado => Eliminado ? "El pana No está :'(" : "El tipo aún es tu pana :D";
+          
     }
 }

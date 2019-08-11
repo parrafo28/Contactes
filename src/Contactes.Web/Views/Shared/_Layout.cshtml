@@ -95,14 +95,17 @@
                                 <li>
                                     <a href="contact.html" class="nav-link text-left">Contact</a>
                                 </li>
-                               
-                                <li>
-                                    <a class="nav-link text-left" asp-controller="Contactos" asp-action="Create">Nuevo Contacto</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link text-left" asp-controller="Contactos" asp-action="Index">Lista de Contactos</a>
-                                </li>
-                                
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a class="nav-link text-left" asp-controller="Contactos" asp-action="Create">Nuevo Contacto</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link text-left" asp-controller="Contactos" asp-action="Listado">Lista de Contactos</a>
+                                    </li>
+                                }
+
+
 
                             </ul>                                                                                                                                                                                                                                                                                          </ul>
                         </nav>
